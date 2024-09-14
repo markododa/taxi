@@ -2,7 +2,6 @@ body {
 	background-color: #fdb813;
 }
 
-@media screen and (max-width: 1200px) {
   a {
     width: 60%;
     font-size: 15px;
