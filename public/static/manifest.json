@@ -5,5 +5,11 @@
   "background_color": "#fdb813",
   "display": "minimal-ui",
   "scope": "/taxi",
-  "start_url": "/taxi"
+  "start_url": "/taxi",
+  "icons": [
+	  {
+		  "src": "https://markododa.github.io/taxi/static/img/taxi.png",
+		  "sizes": "512x512"
+        }
+    ]
 }
