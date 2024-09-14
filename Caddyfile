@@ -1,0 +1,10 @@
+{
+	https_port 8443
+	http_port 8080
+}
+kino {
+	root ./public
+	encode gzip
+	tls internal
+	file_server
+}
