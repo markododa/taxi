@@ -2,8 +2,8 @@
 <html>
  <head>
   <meta charset="UTF-8">
-  <link href="./static/style.css" rel="stylesheet" type="text/css"/>
-  <link rel="manifest" href="/static/manifest.json">
+  <link href="./taxi/static/style.css" rel="stylesheet" type="text/css"/>
+  <link rel="manifest" href="/taxi/static/manifest.json">
 </head>
 <body>
 <h1>Таксиња  🚕</h1>
@@ -17,7 +17,7 @@
 <div><a href="tel://15199">Панорама 📞</a></div><hr>
 <script>
  if (!navigator.serviceWorker.controller) {
-     navigator.serviceWorker.register("/sw.js").then(function(reg) {
+     navigator.serviceWorker.register("/taxi/sw.js").then(function(reg) {
          console.log("Service worker has been registered for scope: " + reg.scope);
      });
  }
