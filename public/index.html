@@ -8,15 +8,15 @@
 </head>
 <body onload="lista_get()">
 <img src="./static/img/header.png" class="taxi"></img>
-<div class=button><a onclick=post(Глобал) id=Глобал href="tel://02-15-180">Глобал</a></div>
-<div class=button><a onclick=post(Рива) id=Рива href="tel://15161">Рива</a></div>
-<div class=button><a onclick=post(Ellite) id=Ellite href="tel://15-169">Ellite</a></div>
-<div class=button><a onclick=post(Плава Лагуна) id=Плава Лагуна href="tel://15-192">Плава Лагуна</a></div>
-<div class=button><a onclick=post(Де Лукс) id=Де Лукс href="tel://15-187">Де Лукс</a></div>
-<div class=button><a onclick=post(Вардар) id=Вардар href="tel://15-195">Вардар</a></div>
-<div class=button><a onclick=post(Водно) id=Водно href="tel://15191">Водно</a></div>
-<div class=button><a onclick=post(Панорама) id=Панорама href="tel://15199">Панорама</a></div>
-<div class=button><a onclick=post(Пулстарс) id=Пулстарс href="tel://15177">Пулстарс</a></div>
+<div class=button><a onclick=post("Глобал") id=Глобал href="tel://02-15-180">Глобал</a></div>
+<div class=button><a onclick=post("Рива") id=Рива href="tel://15161">Рива</a></div>
+<div class=button><a onclick=post("Ellite") id=Ellite href="tel://15-169">Ellite</a></div>
+<div class=button><a onclick=post("Плава Лагуна") id=Плава Лагуна href="tel://15-192">Плава Лагуна</a></div>
+<div class=button><a onclick=post("Де Лукс") id=Де Лукс href="tel://15-187">Де Лукс</a></div>
+<div class=button><a onclick=post("Вардар") id=Вардар href="tel://15-195">Вардар</a></div>
+<div class=button><a onclick=post("Водно") id=Водно href="tel://15191">Водно</a></div>
+<div class=button><a onclick=post("Панорама") id=Панорама href="tel://15199">Панорама</a></div>
+<div class=button><a onclick=post("Пулстарс") id=Пулстарс href="tel://15177">Пулстарс</a></div>
 <script>
  if (!navigator.serviceWorker.controller) {
      navigator.serviceWorker.register("/taxi/sw.js").then(function(reg) {
