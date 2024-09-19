@@ -1,6 +1,8 @@
 function show_item(item) {
    console.log(item);
+   if ( item['count'] >= 10 ) {
    document.getElementById(item['ime']).innerHTML+=' ☹'
+   }
 }
 function show_lista(json) {
    json.forEach((item) => show_item(item));
@@ -25,5 +27,5 @@ function lista_get() {
 }
 
 function post(value) {
-   client('https://dtlbfhhvyepubzxcuqjy.supabase.co/rest/v1/rpc/click_taxi', method = 'POST', body = {"ime": value})
+   console.log(client('https://dtlbfhhvyepubzxcuqjy.supabase.co/rest/v1/rpc/click_taxi', method = 'POST', body = JSON.stringify({"ime": value})).text);
 }
