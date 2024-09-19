@@ -1,6 +1,6 @@
 function show_item(item) {
    console.log(item);
-   document.getElementById(item['ime']).innerHTML+='😔'
+   document.getElementById(item['ime']).innerHTML+=' ☹'
 }
 function show_lista(json) {
    json.forEach((item) => show_item(item));
@@ -11,7 +11,8 @@ function client(url, method = 'GET', body = null) {
       method: method,
       body: body,
       headers: {
-         'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR0bGJmaGh2eWVwdWJ6eGN1cWp5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzQxNTcxNTUsImV4cCI6MTk4OTczMzE1NX0.sxxZt1tFHmsv3kiNbOwiwCxtQDNdANqXpk7427PdRnQ'
+         'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR0bGJmaGh2eWVwdWJ6eGN1cWp5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzQxNTcxNTUsImV4cCI6MTk4OTczMzE1NX0.sxxZt1tFHmsv3kiNbOwiwCxtQDNdANqXpk7427PdRnQ',
+	'Content-Type': 'application/json'
       }
    })
 }
@@ -23,9 +24,6 @@ function lista_get() {
    .then(json => show_lista(json))
 }
 
-function post() {
-   var value = document.getElementById("stavka_id");
-   client('https://dtlbfhhvyepubzxcuqjy.supabase.co/rest/v1/rpc/add', method = 'POST', body = {'stavka': value})
+function post(value) {
+   client('https://dtlbfhhvyepubzxcuqjy.supabase.co/rest/v1/rpc/click_taxi', method = 'POST', body = {"ime": value})
 }
-
-post('test');
