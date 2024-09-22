@@ -1,7 +1,7 @@
 function show_item(item) {
    console.log(item);
    if ( item['count'] >= 10 ) {
-   document.getElementById(item['ime']).innerHTML+=item['count'];
+   document.getElementById(item['ime']).innerHTML+='<sub>'+item['count']+'</sub>';
    }
 }
 function show_lista(json) {
