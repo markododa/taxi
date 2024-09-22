@@ -5,7 +5,9 @@ a::before {
 	content:url(img/phone.png);
 	margin: 1em;
 }
-
+sub {
+	text-align: right;
+}
 .taxi {
 	margin: 5%;
 }
