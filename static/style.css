@@ -6,25 +6,25 @@ a::before {
 	margin: 1em;
 }
 sub {
-	text-align: right;
+	margin: 1em;
 }
 .taxi {
 	margin: 5%;
 }
 
 .button {
-	width: stretch;
-	height: stretch;
+	width: fit-content;
+	height: auto;
 	text-align: left;
-	top: 70px;
-	left: 26px;
-	padding: 10px 10px 10px 10px;
-	gap: 10px;
+	top: 5%;
+	left: 5%;
+	padding: 5% 5% 5% 5%;
+	gap: 5%;
 	border: 3px 0px 0px 0px;
 	opacity: 0px;
 	background: #FFBF00;
 	border: 3px solid #000000;
-	margin: 20px;
+	margin: 5%;
 	box-shadow: 0px 4px 4px 0px #00000040;
 }
 
