@@ -1,6 +1,6 @@
 function show_item(item) {
    console.log(item);
-   if ( item['count'] >= 10 ) {
+   if ( item['count'] > 0 ) {
    document.getElementById(item['ime']).innerHTML+='<sub>'+item['count']+'</sub>';
    }
 }
