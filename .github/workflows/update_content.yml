@@ -1,26 +1,27 @@
 name: Update Content Script Output on Pull Request
 
-on: [pull_request]
+on:
+  pull_request:
+    branches:
+      - main # or any other branch you want to target
 
+workflow: # <--- Add a key here!
 jobs:
   update-content:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-        
-      # Set up the environment variable with your GitHub token. Replace 'your_token' with an actual token or use a secure file containing your token, if preferred (recommended).
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
+        uses: actions/checkout@v3
+
       - name: Run content script output command
-        run: | 
-          ./content.sh > output-file.txt # Ensure this outputs the necessary files for your gh-pages branch, or modify accordingly if needed.
-          
+        run: make html
+
       - name: Deploy to GitHub Pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPO_NAME: github.com/your-username/your-repo # Replace with your actual repository username and repo path or just the branch name if it's a single folder inside gh-pages directory.
-        run: | 
-          it subtree push --prefix public origin ${GITHUB_REPO_NAME}/gh-pages HEAD:$GITHUB_REPO_NAME/gh-pages # This assumes your content script writes to the current directory (HEAD). Adjust paths if necessary based on where it outputs files.
+          REPO_NAME: github.com/${{github.repository}}/gh-pages
+        run: |
+          git add .
+          git commit -m "Update content"
+          git subtree push --prefix public origin ${REPO_NAME} gh-pages HEAD:${REPO_NAME}/gh-pages # This assumes your content script writes to the current directory (HEAD). Adjust paths if necessary based on where it outputs files.
